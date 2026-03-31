@@ -352,13 +352,13 @@
 .ks-prose em     { font-style: italic; }
 
 .ks-prose ul { padding-left: 1.5em; }
-.ks-prose ul li::marker { color: var(--accent-primary); }
+.ks-prose ul li::marker { color: var(--accent-gold); }
 
 .ks-prose ol { padding-left: 1.5em; list-style: decimal; }
 .ks-prose ol li::marker {
   font-family: var(--font-ui);
   font-size: 0.75em;
-  color: var(--accent-primary);
+  color: var(--accent-gold);
   font-weight: 700;
 }
 

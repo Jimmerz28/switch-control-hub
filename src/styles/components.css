@@ -25,6 +25,8 @@
   border-top: 3px solid var(--ink);
   border-bottom: 3px solid var(--ink);
   transition: border-color var(--transition-base);
+  flex-wrap: wrap;
+  gap: var(--space-sm);
 }
 
 .ks-masthead-logo {
@@ -45,6 +47,15 @@
   display: flex;
   align-items: center;
   gap: var(--space-lg);
+}
+
+@media (max-width: 600px) {
+  .ks-masthead-nav {
+    gap: var(--space-md);
+  }
+  .ks-masthead-link {
+    display: none;
+  }
 }
 
 .ks-masthead-link {

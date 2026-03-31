@@ -754,6 +754,10 @@
   margin-bottom: 80px;
 }
 
+.ks-section > .ks-section-label {
+  margin-bottom: var(--space-sm);
+}
+
 .ks-section-heading {
   font-family: var(--font-display);
   font-weight: 400;

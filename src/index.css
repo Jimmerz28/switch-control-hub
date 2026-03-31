@@ -111,7 +111,7 @@
   --ink:             #D8E2D5;
   --ink-secondary:   #9EAD98;
   --ink-muted:       #5A6B55;
-  --border-color:    #364F30;   /* bumped lighter for more separation from surface */
+  --border-color:    #3F5A39;   /* pushed lighter for dark mode visibility */
 
   --accent-primary:  #FF3575;
   --accent-electric: #22D3EE;
@@ -282,7 +282,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--accent-primary);
+  color: var(--accent-electric);
 }
 
 /* UI mono label (general) */
@@ -352,20 +352,20 @@
 .ks-prose em     { font-style: italic; }
 
 .ks-prose ul { padding-left: 1.5em; }
-.ks-prose ul li::marker { color: var(--accent-primary); }
+.ks-prose ul li::marker { color: var(--accent-gold); }
 
 .ks-prose ol { padding-left: 1.5em; list-style: decimal; }
 .ks-prose ol li::marker {
   font-family: var(--font-ui);
   font-size: 0.75em;
-  color: var(--accent-primary);
+  color: var(--accent-gold);
   font-weight: 700;
 }
 
 .ks-prose li + li { margin-top: 0.4em; }
 
 .ks-prose blockquote {
-  border-left: 3px solid var(--accent-primary);
+  border-left: 3px solid var(--accent-gold);
   padding: 2px 0 2px 20px;
   color: var(--ink-muted);
   font-style: italic;
@@ -412,4 +412,4 @@ abbr[title] {
   cursor: help;
 }
 
-s { text-decoration-color: var(--accent-primary); }
+s { text-decoration-color: var(--ink-muted); }

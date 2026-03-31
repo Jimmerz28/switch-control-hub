@@ -107,7 +107,7 @@
 }
 
 /* -------------------------------------------------------
-   POST CARDS
+   POST CARDS — editorial index layout
    ------------------------------------------------------- */
 
 .ks-card-stack {
@@ -125,16 +125,32 @@
   text-decoration: none;
   color: inherit;
   transition: border-color var(--transition-base);
+  position: relative;
 }
 
 .ks-post-card:first-child {
   border-top: 1px solid var(--border-color);
 }
 
+/* Vertical rule between date and content */
+.ks-post-card::after {
+  content: '';
+  position: absolute;
+  left: 92px;
+  top: var(--space-lg);
+  bottom: var(--space-lg);
+  width: 1px;
+  background: var(--border-color);
+  transition: background var(--transition-base);
+}
+
 @media (max-width: 500px) {
   .ks-post-card {
     grid-template-columns: 1fr;
     gap: var(--space-xs);
+  }
+  .ks-post-card::after {
+    display: none;
   }
 }
 
@@ -165,7 +181,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--accent-primary);
+  color: var(--accent-electric);
   display: inline-block;
 }
 
@@ -268,30 +284,30 @@
 .ks-code-block .cm  { color: var(--ink-muted); font-style: italic; }
 
 /* -------------------------------------------------------
-   CALLOUTS
+   CALLOUTS — inline label bar instead of absolute
    ------------------------------------------------------- */
 
 .ks-callout {
   border: 2px solid var(--accent-signal);
-  padding: 20px;
   max-width: var(--content-width);
-  position: relative;
   transition: border-color var(--transition-base);
+  overflow: hidden;
 }
 
 .ks-callout-label {
+  display: block;
   font-family: var(--font-ui);
   font-size: 0.6rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--accent-signal);
-  position: absolute;
-  top: -8px;
-  left: 12px;
-  background: var(--bg);
-  padding: 0 6px;
-  transition: background var(--transition-base);
+  color: var(--bg);
+  background: var(--accent-signal);
+  padding: 6px 16px;
+}
+
+.ks-callout-body {
+  padding: 16px 20px;
 }
 
 .ks-callout p {
@@ -302,10 +318,10 @@
 }
 
 .ks-callout.warning          { border-color: var(--accent-gold); }
-.ks-callout.warning .ks-callout-label { color: var(--accent-gold); }
+.ks-callout.warning .ks-callout-label { background: var(--accent-gold); }
 
 .ks-callout.tip              { border-color: var(--accent-electric); }
-.ks-callout.tip .ks-callout-label    { color: var(--accent-electric); }
+.ks-callout.tip .ks-callout-label    { background: var(--accent-electric); }
 
 .ks-callout code {
   font-family: var(--font-code);
@@ -317,12 +333,12 @@
 }
 
 /* -------------------------------------------------------
-   PULL QUOTE
+   PULL QUOTE — gold decorative mark
    ------------------------------------------------------- */
 
 .ks-pull-quote {
   max-width: 600px;
-  padding: 32px 0;
+  padding: 40px 0 32px;
   position: relative;
 }
 
@@ -330,10 +346,10 @@
   content: '\201C';
   font-family: var(--font-display);
   font-size: 8rem;
-  color: var(--accent-primary);
-  opacity: 0.2;
+  color: var(--accent-gold);
+  opacity: 0.35;
   position: absolute;
-  top: -10px;
+  top: -6px;
   left: -16px;
   line-height: 1;
   pointer-events: none;
@@ -418,7 +434,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--accent-primary);
+  color: var(--accent-electric);
   text-decoration: none;
   display: inline-block;
   margin-bottom: var(--space-md);
@@ -625,7 +641,9 @@
    ------------------------------------------------------- */
 
 .ks-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: var(--font-ui);
   font-size: 0.72rem;
   font-weight: 700;
@@ -660,18 +678,27 @@
   color: var(--accent-primary);
 }
 
+/* Ghost button — arrow glyph CTA style */
 .ks-btn-ghost {
   background: transparent;
-  color: var(--accent-primary);
+  color: var(--ink);
   border-color: transparent;
   padding-left: 0;
   padding-right: 0;
-  border-bottom: 2px solid var(--accent-primary);
+}
+
+.ks-btn-ghost::after {
+  content: '→';
+  color: var(--accent-primary);
+  transition: transform var(--transition-fast);
 }
 
 .ks-btn-ghost:hover {
-  color: var(--ink);
-  border-color: var(--ink);
+  color: var(--accent-primary);
+}
+
+.ks-btn-ghost:hover::after {
+  transform: translateX(4px);
 }
 
 .ks-btn-sm {
@@ -679,14 +706,19 @@
   padding: 6px 12px;
 }
 
+.ks-btn-sm.ks-btn-ghost {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* -------------------------------------------------------
-   TABLE
+   TABLE — bold header row
    ------------------------------------------------------- */
 
 .ks-table-wrap {
   max-width: var(--content-width);
   overflow-x: auto;
-  border: 2px solid var(--border-color);
+  border: 2px solid var(--ink);
   transition: border-color var(--transition-base);
 }
 
@@ -703,11 +735,11 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--ink-muted);
+  color: var(--bg);
   text-align: left;
   padding: 12px var(--space-md);
-  border-bottom: 2px solid var(--ink);
-  background: var(--surface);
+  border-bottom: none;
+  background: var(--ink);
   white-space: nowrap;
 }
 
@@ -818,6 +850,7 @@
   color: var(--bg);
   background: var(--accent-primary);
   padding: 4px 10px;
+  margin-bottom: var(--space-md);
 }
 
 /* -------------------------------------------------------
@@ -839,8 +872,8 @@
 
 .ks-spacing-block {
   height: 12px;
-  background: var(--accent-primary);
-  opacity: 0.3;
+  background: var(--accent-gold);
+  opacity: 0.35;
   flex-shrink: 0;
 }
 

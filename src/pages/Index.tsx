@@ -153,7 +153,7 @@ const Index = () => {
               <p>Color is never the sole indicator of meaning. Always pair signal colors with text labels or icons.</p>
             </Callout>
             <Callout variant="tip">
-              <p>Use <code className="ks-code" style={{ fontSize: "0.85em" }}>prefers-reduced-motion</code> to respect user preferences before adding any animation.</p>
+              <p>Use <code>prefers-reduced-motion</code> to respect user preferences before adding any animation.</p>
             </Callout>
           </div>
         </section>

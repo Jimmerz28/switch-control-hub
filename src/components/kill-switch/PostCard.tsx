@@ -9,9 +9,18 @@ interface PostCardProps {
 }
 
 export function PostCard({ date, tags, title, excerpt, href = "#" }: PostCardProps) {
+  const dateParts = date.split("\n");
+
   return (
     <a className="ks-post-card" href={href}>
-      <div className="ks-post-card-date" dangerouslySetInnerHTML={{ __html: date.replace("\n", "<br/>") }} />
+      <div className="ks-post-card-date">
+        {dateParts.map((part, i) => (
+          <span key={i}>
+            {part}
+            {i < dateParts.length - 1 && <br />}
+          </span>
+        ))}
+      </div>
       <div className="ks-post-card-content">
         <div className="ks-post-card-tags">
           {tags.map((tag) => (

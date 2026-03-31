@@ -307,6 +307,15 @@
 .ks-callout.tip              { border-color: var(--accent-electric); }
 .ks-callout.tip .ks-callout-label    { color: var(--accent-electric); }
 
+.ks-callout code {
+  font-family: var(--font-code);
+  font-size: 0.85em;
+  background: var(--code-bg);
+  color: var(--accent-electric);
+  padding: 1px 6px;
+  transition: background var(--transition-base);
+}
+
 /* -------------------------------------------------------
    PULL QUOTE
    ------------------------------------------------------- */

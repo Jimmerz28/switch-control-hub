@@ -354,7 +354,7 @@
    ------------------------------------------------------- */
 
 .ks-footer {
-  max-width: var(--content-width);
+  max-width: var(--page-width);
   padding-top: var(--space-md);
   border-top: 3px solid var(--ink);
   display: flex;

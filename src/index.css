@@ -365,7 +365,7 @@
 .ks-prose li + li { margin-top: 0.4em; }
 
 .ks-prose blockquote {
-  border-left: 3px solid var(--accent-primary);
+  border-left: 3px solid var(--accent-gold);
   padding: 2px 0 2px 20px;
   color: var(--ink-muted);
   font-style: italic;

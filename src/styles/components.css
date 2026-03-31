@@ -786,7 +786,7 @@
 
 .ks-page-subtitle {
   font-family: var(--font-ui);
-  color: var(--ink-muted);
+  color: var(--ink-secondary);
   font-size: 0.82rem;
   letter-spacing: 0.02em;
 }

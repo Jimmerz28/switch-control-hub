@@ -412,4 +412,4 @@ abbr[title] {
   cursor: help;
 }
 
-s { text-decoration-color: var(--accent-primary); }
+s { text-decoration-color: var(--ink-muted); }

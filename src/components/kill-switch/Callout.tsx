@@ -13,7 +13,9 @@ export function Callout({ variant = "note", label, children }: CalloutProps) {
   return (
     <div className={`ks-callout${variantClass}`}>
       <span className="ks-callout-label">{displayLabel}</span>
-      {typeof children === "string" ? <p>{children}</p> : children}
+      <div className="ks-callout-body">
+        {typeof children === "string" ? <p>{children}</p> : children}
+      </div>
     </div>
   );
 }

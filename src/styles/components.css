@@ -883,3 +883,115 @@
   color: var(--ink-muted);
   white-space: nowrap;
 }
+
+/* -------------------------------------------------------
+   KILL SWITCH LIKE BUTTON
+   ------------------------------------------------------- */
+
+.ks-kill-like {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.ks-kill-like-housing {
+  position: relative;
+  width: 28px;
+  height: 34px;
+  background: var(--surface);
+  border: 2px solid var(--border-color);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition-fast), background var(--transition-base);
+  overflow: hidden;
+}
+
+/* Hazard stripes at bottom */
+.ks-kill-like-stripes {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--accent-gold),
+    var(--accent-gold) 2px,
+    var(--ink) 2px,
+    var(--ink) 4px
+  );
+}
+
+/* Safety cover */
+.ks-kill-like-cover {
+  position: absolute;
+  top: -1px;
+  left: 3px;
+  right: 3px;
+  height: 10px;
+  background: var(--ink-muted);
+  border-radius: 2px 2px 0 0;
+  transform-origin: top center;
+  transform: rotateX(0deg);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+  opacity: 0.5;
+}
+
+.ks-kill-like--active .ks-kill-like-cover {
+  transform: rotateX(-120deg);
+  opacity: 0.2;
+}
+
+/* The red button */
+.ks-kill-like-btn {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--ink-muted);
+  border: 2px solid var(--border-color);
+  transition: background var(--transition-fast), transform 0.12s ease, box-shadow 0.15s ease, border-color var(--transition-fast);
+  position: relative;
+  z-index: 1;
+  margin-top: -2px;
+}
+
+.ks-kill-like:hover .ks-kill-like-btn {
+  background: var(--accent-signal);
+  border-color: var(--accent-signal);
+}
+
+.ks-kill-like--active .ks-kill-like-btn {
+  background: var(--accent-signal);
+  border-color: var(--accent-signal);
+  box-shadow: 0 0 8px hsla(0, 72%, 51%, 0.5);
+}
+
+.ks-kill-like--pressing .ks-kill-like-btn {
+  transform: scale(0.82);
+}
+
+.ks-kill-like--active .ks-kill-like-housing {
+  border-color: var(--accent-signal);
+}
+
+.ks-kill-like-count {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+  min-width: 1.2em;
+  transition: color var(--transition-fast);
+}
+
+.ks-kill-like--active .ks-kill-like-count {
+  color: var(--accent-signal);
+}

@@ -1,5 +1,5 @@
 import { ThemeToggle } from "./ThemeToggle";
-import logo from "@/assets/kill-switch-logo.jpeg";
+import logo from "@/assets/kill-switch-logo.png";
 
 interface MastheadProps {
   links?: { label: string; href: string }[];

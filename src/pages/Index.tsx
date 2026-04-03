@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "@/assets/kill-switch-logo.jpeg";
+import logo from "@/assets/kill-switch-logo.png";
 import { ThemeProvider } from "@/components/kill-switch/ThemeProvider";
 import { Masthead } from "@/components/kill-switch/Masthead";
 import { PostCard, CardStack } from "@/components/kill-switch/PostCard";

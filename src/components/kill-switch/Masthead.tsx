@@ -1,4 +1,5 @@
 import { ThemeToggle } from "./ThemeToggle";
+import logo from "@/assets/kill-switch-logo.jpeg";
 
 interface MastheadProps {
   links?: { label: string; href: string }[];
@@ -7,7 +8,8 @@ interface MastheadProps {
 export function Masthead({ links }: MastheadProps) {
   return (
     <header className="ks-masthead">
-      <a href="/" className="ks-masthead-logo">
+      <a href="/" className="ks-masthead-logo" style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <img src={logo} alt="Kill Switch logo" style={{ height: 36, width: 36, borderRadius: 6, objectFit: "cover" }} />
         KILL<span className="ks-accent">//</span>SWITCH
       </a>
       <nav className="ks-masthead-nav">

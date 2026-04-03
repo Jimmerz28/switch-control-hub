@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "@/assets/kill-switch-logo.jpeg";
 import { ThemeProvider } from "@/components/kill-switch/ThemeProvider";
 import { Masthead } from "@/components/kill-switch/Masthead";
 import { PostCard, CardStack } from "@/components/kill-switch/PostCard";
@@ -43,6 +44,7 @@ const Index = () => {
       <div className="ks-page">
         {/* Page Header */}
         <div className="ks-page-header">
+          <img src={logo} alt="Kill Switch logo" style={{ height: 80, width: 80, borderRadius: 10, objectFit: "cover", marginBottom: 16 }} />
           <span className="ks-badge">Design System Showcase</span>
           <h1 className="ks-page-title">Kill <em>Switch</em></h1>
           <p className="ks-page-subtitle">// sage &amp; forest · sharp edges · serif + mono system</p>

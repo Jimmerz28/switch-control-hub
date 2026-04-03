@@ -103,18 +103,21 @@ const Index = () => {
               tags={["Design", "Code"]}
               title="The tyranny of twelve-column grids"
               excerpt="We've been building websites on twelve columns for fifteen years. It made sense when responsive design was new. It doesn't anymore."
+              likes={42}
             />
             <PostCard
               date={"02.12\n2026"}
               tags={["Infrastructure", "Privacy", "Code"]}
               title="Self-hosting isn't about saving money"
               excerpt="Every time I spin up a new service on my NAS I'm reminded that the point was never the price. It's the quiet satisfaction of owning your stack."
+              likes={28}
             />
             <PostCard
               date={"02.04\n2026"}
               tags={["Opinion"]}
               title="Dark mode is a design decision, not a feature"
               excerpt="If your dark mode is an inverted afterthought, you've told your users exactly how much you care about half their experience."
+              likes={63}
             />
           </CardStack>
         </section>

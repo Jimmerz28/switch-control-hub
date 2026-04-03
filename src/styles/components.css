@@ -116,6 +116,16 @@
   flex-direction: column;
 }
 
+.ks-post-card-wrapper {
+  position: relative;
+}
+
+.ks-post-card-actions {
+  position: absolute;
+  right: 0;
+  bottom: var(--space-lg);
+}
+
 .ks-post-card {
   padding: var(--space-lg) 0;
   border-bottom: 1px solid var(--border-color);

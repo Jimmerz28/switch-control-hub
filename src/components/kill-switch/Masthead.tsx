@@ -9,7 +9,7 @@ export function Masthead({ links }: MastheadProps) {
   return (
     <header className="ks-masthead">
       <a href="/" className="ks-masthead-logo" style={{ display: "flex", alignItems: "center", gap: 12 }}>
-        <img src={logo} alt="Kill Switch logo" style={{ height: 44, width: 44, objectFit: "contain" }} />
+        <img src={logo} alt="Kill Switch logo" style={{ height: 56, width: 56, objectFit: "contain" }} />
         KILL<span className="ks-accent">//</span>SWITCH
       </a>
       <nav className="ks-masthead-nav">

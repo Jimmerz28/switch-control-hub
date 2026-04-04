@@ -44,7 +44,7 @@ const Index = () => {
       <div className="ks-page">
         {/* Page Header */}
         <div className="ks-page-header">
-          <img src={logo} alt="Kill Switch logo" style={{ height: 120, width: 120, objectFit: "contain", marginBottom: 20 }} />
+          <img src={logo} alt="Kill Switch logo" style={{ height: 180, width: 180, objectFit: "contain", marginBottom: 24 }} />
           <span className="ks-badge">Design System Showcase</span>
           <h1 className="ks-page-title">Kill <em>Switch</em></h1>
           <p className="ks-page-subtitle">// sage &amp; forest · sharp edges · serif + mono system</p>

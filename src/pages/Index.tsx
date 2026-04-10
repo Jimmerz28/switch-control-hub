@@ -43,10 +43,10 @@ const Index = () => {
     <ThemeProvider>
       <div className="ks-page">
         {/* Page Header */}
-        <div className="ks-page-header">
+        <div className="ks-page-header" style={{ alignItems: "center" }}>
           <span className="ks-badge">Design System Showcase</span>
-          <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-            <img src={logo} alt="Kill Switch logo" style={{ height: 120, width: 120, objectFit: "contain", margin: 0, padding: 0 }} />
+          <div style={{ display: "flex", alignItems: "center", gap: 28, justifyContent: "center" }}>
+            <img src={logo} alt="Kill Switch logo" style={{ height: 140, width: 140, objectFit: "contain", flexShrink: 0 }} />
             <h1 className="ks-page-title" style={{ margin: 0 }}>Kill <em>Switch</em></h1>
           </div>
           <p className="ks-page-subtitle">// sage &amp; forest · sharp edges · serif + mono system</p>

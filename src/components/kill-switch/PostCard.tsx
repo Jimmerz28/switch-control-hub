@@ -16,13 +16,15 @@ export function PostCard({ date, tags, title, excerpt, href = "#", likes = 0 }: 
   return (
     <div className="ks-post-card-wrapper">
       <a className="ks-post-card" href={href}>
-        <div className="ks-post-card-date">
-          {dateParts.map((part, i) => (
-            <span key={i}>
-              {part}
-              {i < dateParts.length - 1 && <br />}
-            </span>
-          ))}
+        <div className="ks-post-card-rail">
+          <div className="ks-post-card-date">
+            {dateParts.map((part, i) => (
+              <span key={i}>
+                {part}
+                {i < dateParts.length - 1 && <br />}
+              </span>
+            ))}
+          </div>
         </div>
         <div className="ks-post-card-content">
           <div className="ks-post-card-tags">
@@ -32,11 +34,11 @@ export function PostCard({ date, tags, title, excerpt, href = "#", likes = 0 }: 
           </div>
           <div className="ks-post-card-title">{title}</div>
           <div className="ks-post-card-excerpt">{excerpt}</div>
+          <div className="ks-post-card-footer">
+            <KillSwitchLike initialCount={likes} />
+          </div>
         </div>
       </a>
-      <div className="ks-post-card-actions">
-        <KillSwitchLike initialCount={likes} />
-      </div>
     </div>
   );
 }

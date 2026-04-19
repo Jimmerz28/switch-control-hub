@@ -120,10 +120,17 @@
   position: relative;
 }
 
-.ks-post-card-actions {
-  position: absolute;
-  right: 0;
-  bottom: var(--space-lg);
+.ks-post-card-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.ks-post-card-footer {
+  margin-top: var(--space-md);
+  display: flex;
+  align-items: center;
 }
 
 .ks-post-card {

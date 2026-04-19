@@ -131,6 +131,7 @@
   margin-top: var(--space-md);
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .ks-post-card {

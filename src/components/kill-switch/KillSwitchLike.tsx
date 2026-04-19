@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ArrowUp } from "lucide-react";
 
 interface KillSwitchLikeProps {
   initialCount?: number;
@@ -7,7 +8,6 @@ interface KillSwitchLikeProps {
 export function KillSwitchLike({ initialCount = 0 }: KillSwitchLikeProps) {
   const [liked, setLiked] = useState(false);
   const [count, setCount] = useState(initialCount);
-  const [pressing, setPressing] = useState(false);
 
   const toggle = () => {
     setLiked((prev) => {
@@ -18,24 +18,14 @@ export function KillSwitchLike({ initialCount = 0 }: KillSwitchLikeProps) {
 
   return (
     <button
-      className={`ks-kill-like ${liked ? "ks-kill-like--active" : ""} ${pressing ? "ks-kill-like--pressing" : ""}`}
+      className={`ks-upvote ${liked ? "ks-upvote--active" : ""}`}
       onClick={toggle}
-      onPointerDown={() => setPressing(true)}
-      onPointerUp={() => setPressing(false)}
-      onPointerLeave={() => setPressing(false)}
-      aria-label={liked ? "Unlike this switch" : "Like this switch"}
+      aria-label={liked ? "Remove upvote" : "Upvote this switch"}
+      aria-pressed={liked}
       type="button"
     >
-      {/* Button housing */}
-      <span className="ks-kill-like-housing">
-        {/* Safety cover */}
-        <span className="ks-kill-like-cover" />
-        {/* The button */}
-        <span className="ks-kill-like-btn" />
-        {/* Hazard stripes */}
-        <span className="ks-kill-like-stripes" />
-      </span>
-      <span className="ks-kill-like-count">{count}</span>
+      <ArrowUp size={16} strokeWidth={2.25} aria-hidden="true" />
+      <span className="ks-upvote-count">{count}</span>
     </button>
   );
 }

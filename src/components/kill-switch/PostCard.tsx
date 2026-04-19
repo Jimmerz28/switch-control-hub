@@ -14,8 +14,8 @@ export function PostCard({ date, tags, title, excerpt, href = "#", likes = 0 }: 
   const dateParts = date.split("\n");
 
   return (
-    <article className="ks-post-card">
-      <div className="ks-post-card-rail">
+    <div className="ks-post-card-wrapper">
+      <a className="ks-post-card" href={href}>
         <div className="ks-post-card-date">
           {dateParts.map((part, i) => (
             <span key={i}>
@@ -24,25 +24,20 @@ export function PostCard({ date, tags, title, excerpt, href = "#", likes = 0 }: 
             </span>
           ))}
         </div>
-      </div>
-      <div className="ks-post-card-content">
-        <div className="ks-post-card-tags">
-          {tags.map((tag) => (
-            <span key={tag} className="ks-post-card-tag">{tag}</span>
-          ))}
+        <div className="ks-post-card-content">
+          <div className="ks-post-card-tags">
+            {tags.map((tag) => (
+              <span key={tag} className="ks-post-card-tag">{tag}</span>
+            ))}
+          </div>
+          <div className="ks-post-card-title">{title}</div>
+          <div className="ks-post-card-excerpt">{excerpt}</div>
         </div>
-        <a className="ks-post-card-title-link" href={href}>
-          <h3 className="ks-post-card-title">{title}</h3>
-          <p className="ks-post-card-excerpt">{excerpt}</p>
-        </a>
-        <div className="ks-post-card-footer">
-          <a className="ks-post-card-readmore" href={href}>
-            Read switch
-          </a>
-          <KillSwitchLike initialCount={likes} />
-        </div>
+      </a>
+      <div className="ks-post-card-actions">
+        <KillSwitchLike initialCount={likes} />
       </div>
-    </article>
+    </div>
   );
 }
 

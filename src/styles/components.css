@@ -116,16 +116,6 @@
   flex-direction: column;
 }
 
-.ks-post-card-wrapper {
-  position: relative;
-}
-
-.ks-post-card-actions {
-  position: absolute;
-  right: 0;
-  bottom: var(--space-lg);
-}
-
 .ks-post-card {
   padding: var(--space-lg) 0;
   border-bottom: 1px solid var(--border-color);
@@ -894,41 +884,4 @@
   white-space: nowrap;
 }
 
-/* -------------------------------------------------------
-   UPVOTE BUTTON
-   ------------------------------------------------------- */
-
-.ks-upvote {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--surface);
-  border: 1px solid var(--border-color);
-  border-radius: 2px;
-  cursor: pointer;
-  padding: 4px 8px;
-  color: var(--ink-muted);
-  font-family: var(--font-ui);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
-}
-
-.ks-upvote:hover {
-  color: var(--ink);
-  border-color: var(--ink);
-}
-
-.ks-upvote--active {
-  color: var(--accent-signal);
-  border-color: var(--accent-signal);
-}
-
-.ks-upvote-count {
-  min-width: 1.2em;
-  text-align: left;
-}
 
